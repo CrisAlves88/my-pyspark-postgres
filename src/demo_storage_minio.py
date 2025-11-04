@@ -47,7 +47,9 @@ def main():
         return  # Sai do script se não puder conectar
 
     # 3. Definir nome do bucket e do objeto
-    bucket_name = "meu-bucket-teste"
+    #bucket_name = "meu-bucket-teste"
+    #object_name = "teste.txt"
+    bucket_name = "raw" # Minio é case sensitive
     object_name = "teste.txt"
     
     try:
