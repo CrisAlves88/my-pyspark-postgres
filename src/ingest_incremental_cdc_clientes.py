@@ -17,6 +17,14 @@ Ambiente:
   CDC_SLOT   (default: data_sync_slot)
   MINIO_ENDPOINT (ex.: minio:9000), MINIO_ACCESS_KEY, MINIO_SECRET_KEY, MINIO_SECURE=false
   TARGET_BUCKET  (default: raw)
+
+Rordar os códigos abaixo em SQL:
+Primeiro:
+    SELECT * FROM pg_create_logical_replication_slot('data_sync_slot', 'test_decoding');
+
+Segundo
+    SELECT slot_name, plugin, database, active FROM pg_replication_slots;
+
 """
 
 import os, io, re, csv, json, glob, shutil, tempfile
